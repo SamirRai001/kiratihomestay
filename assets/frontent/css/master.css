@@ -41,6 +41,7 @@ a {
   border-radius: 10px;
   border: 3px solid #f1f1f1;
 }
+
 /* -------------------------- Scroll bar css end -------------------------- */
 
 /* -------------------------- Button css start -------------------------- */
@@ -55,6 +56,7 @@ a {
   min-height: 100vh;
 }
 
+/* -------------------------- Quick contact btn css start -------------------------- */
 .contact-btn-holder {
   z-index: 999;
   position: fixed;
@@ -73,8 +75,10 @@ a {
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
-/* -------------------------- Hero css start -------------------------- */
-.hero {
+/* -------------------------- Quick contact btn css end -------------------------- */
+
+/* -------------------------- Home page hero css start -------------------------- */
+.home-page.hero {
   position: relative;
   height: 110vh;
   background: url('../../frontent/image/hero\ image.jpg');
@@ -85,7 +89,7 @@ a {
   text-align: center;
 }
 
-.hero .hero-overlay {
+.home-page.hero .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -94,17 +98,17 @@ a {
   background: rgba(0, 0, 0, 0.4);
 }
 
-.hero .hero-content .hero-text-area {
+.home-page.hero .hero-content .hero-text-area {
   max-width: 45%;
   text-align: left;
   z-index: 999;
 }
 
-.hero .hero-content .hero-text-area h1 {
+.home-page.hero .hero-content .hero-text-area h1 {
   font-size: 50px;
 }
 
-.hero .hero-content .hero-text-area a.btn {
+.home-page.hero .hero-content .hero-text-area a.btn {
   cursor: pointer !important;
   color: #ffff;
   border: 1px solid #ffff !important;
@@ -113,27 +117,28 @@ a {
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-.hero .hero-content .hero-text-area a.btn:hover {
+.home-page.hero .hero-content .hero-text-area a.btn:hover {
   background-color: #ffff;
   color: var(--primary-color);
 }
 
 @media only screen and (max-width: 991px) {
-  .hero .hero-content .hero-text-area h1 {
+  .home-page.hero .hero-content .hero-text-area h1 {
     font-size: 40px;
   }
 
-  .hero .hero-content .hero-text-area {
+  .home-page.hero .hero-content .hero-text-area {
     max-width: 80%;
   }
 }
 
 @media only screen and (max-width: 767px) {
-  .hero .hero-content .hero-text-area {
+  .home-page.hero .hero-content .hero-text-area {
     max-width: 90%;
   }
 }
-/* -------------------------- Hero css end -------------------------- */
+
+/* -------------------------- Home page hero css end -------------------------- */
 
 /* -------------------------- Navbar css start -------------------------- */
 .navbar {
@@ -211,6 +216,34 @@ a {
   color: var(--primary-color);
 }
 
+.navbar .navbar-nav .dropdown:hover .dropdown-menu {
+  display: block;
+  animation: dropdownmenuup 0.1s ease;
+}
+
+@keyframes dropdownmenuup {
+  from {
+    transform: translateY(20px);
+  }
+
+  to {
+    transform: translateY(0px);
+  }
+}
+
+.navbar .navbar-nav .dropdown .dropdown-menu {
+  border-radius: 0px;
+  border: none;
+}
+
+.navbar .navbar-nav .dropdown .dropdown-menu .dropdown-item {
+  color: var(--primary-color);
+}
+
+.navbar .navbar-nav .dropdown .dropdown-menu .dropdown-item:focus {
+  background-color: transparent;
+}
+
 .navbar .nav-social-links li a .nav-social-links-icon {
   font-size: 28px;
   transition: color 1s ease;
@@ -272,8 +305,8 @@ a {
   width: 25px;
 }
 
-.footer .footer-social-links li a i{
- font-size: 30px;
+.footer .footer-social-links li a i {
+  font-size: 30px;
 }
 
 .footer .footer-copyright {
@@ -282,6 +315,7 @@ a {
 }
 
 @media only screen and (max-width: 991px) {
+
   .footer .footer-pages-link h5,
   .footer .footer-pages-link ul li,
   .footer .footer-contact-link h5,
@@ -290,4 +324,104 @@ a {
     justify-content: center;
   }
 }
+
 /* -------------------------- Footer css end -------------------------- */
+
+/* -------------------------- Contact page hero css start -------------------------- */
+.contact-page.hero {
+  position: relative;
+  height: 110vh;
+  color: white;
+  text-align: center;
+}
+
+.contact-page.hero .map-holder {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.contact-page.contact-deatail-holder {
+  background-color: var(--primary-color);
+}
+
+.contact-page.contact-deatail-holder .card {
+  border-radius: 0;
+  transform: translateY(-100px);
+}
+
+.contact-page.contact-deatail-holder .card .card-body {
+  padding: 50px;
+}
+
+.contact-page.contact-deatail-holder .card .row .col-lg-6:nth-child(1) {
+  color: var(--secondary-color);
+}
+
+.contact-page.contact-deatail-holder .card .row .col-lg-6:nth-child(1) .image-holder {
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 4px solid var(--secondary-color);
+}
+
+.contact-page.contact-deatail-holder .card .row .col-lg-6:nth-child(1) .contact-holder li a {
+  font-size: 15px;
+  color: var(--secondary-color);
+}
+
+.contact-page.contact-deatail-holder .card .row .col-lg-6:nth-child(1) .contact-holder li a i {
+  width: 25px;
+}
+
+.contact-page.contact-deatail-holder .card .row .col-lg-6:nth-child(1) .contact-holder .social-icon-holder i {
+  font-size: 30px;
+}
+
+.contact-page.contact-deatail-holder .card .card-body .btn {
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.contact-page.contact-deatail-holder .card .card-body .btn:hover {
+  background-color: white;
+  color: var(--secondary-color);
+}
+
+.contact-page.contact-deatail-holder .card .row .col-lg-6:nth-child(2) {
+  background-color: var(--secondary-color);
+}
+
+.contact-page.contact-deatail-holder .card .form-control {
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 991px) {
+  .contact-page.contact-deatail-holder .card .card-body {
+    padding: 35px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .contact-page.contact-deatail-holder .card .card-body {
+    padding: 15px;
+  }
+
+  .contact-page.contact-deatail-holder .card .row .col-lg-6:nth-child(1) .sm-image-holder {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .contact-page.contact-deatail-holder .card .row .col-lg-6:nth-child(1) .contact-holder li {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* -------------------------- Contact page hero css end -------------------------- */
