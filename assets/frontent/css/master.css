@@ -576,3 +576,17 @@ a {
 /* -------------------------- Contact page contact detail css end -------------------------- */
 
 /* ---------------------------------------------------- Contact page css end ---------------------------------------------------- */
+
+
+.default-admin-login-page.hero,
+.default-admin-login-page.hero .background {
+  height: 110vh;
+  position: relative;
+}
+
+canvas {
+  position: absolute;
+  height: 110vh !important;
+  width: 100% !important;
+  z-index: 1 !important;
+}

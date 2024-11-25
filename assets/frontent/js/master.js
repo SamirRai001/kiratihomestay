@@ -56,3 +56,25 @@ $(document).ready(function () {
     });
 });
 // ------------------------------ Contact Page End ------------------------------
+
+// ------------------------------ Login Page Animation Start ------------------------------
+function rain() {
+    const backgroundDiv = document.getElementById('background');
+    const image = new Image();
+    image.onload = function () {
+        var rainyDay = new RainyDay({
+            image: this,
+            blur: 10,
+            fps: 40
+        });
+        RainyDay.rain([
+            [5, 2, 2]
+        ], 0);
+    };
+
+    backgroundDiv.style.backgroundImage = "url('../../assets/frontent/image/hero image.jpg')";
+    backgroundDiv.style.backgroundSize = "cover";
+    backgroundDiv.style.backgroundPosition = "center";
+    image.src = '../../assets/frontent/image/hero image.jpg';
+}
+// ------------------------------ Login Page Animation End ------------------------------
