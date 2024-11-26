@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- title -->
+    <title>Verify OTP | Kirati Homestay</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="../../assets/frontent/image/logo&icon/icon.png">
+
+    <!-- bootstrap min css v5.3.3 -->
+    <link rel="stylesheet" href="../../assets/source/bootstrap/bootstrap.min.css">
+
+    <!-- anukool icon css v1.0 -->
+    <link rel="stylesheet" href="../../assets/source/anukool-v1.0/style.css">
+
+    <!-- animate css v4.1.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- owl carousel 2 min css v2.3.4 -->
+    <link rel="stylesheet" href="../../assets/source/Owl Carousel/owl.carousel.min.css">
+
+    <!-- owl thene default min css v2.3.4 -->
+    <link rel="stylesheet" href="../../assets/source/Owl Carousel/owl.theme.default.min.css">
+
+    <!-- master css -->
+    <link rel="stylesheet" href="../../assets/frontent/css/master.css">
+
+</head>
+
+<body>
+    <div class="whole-web-container">
+
+        <!-- Main content here -->
+        <main class="main-contetntainer">
+
+            <!-- Verify OTP -->
+            <div class="admin-verify-otp-page hero d-flex justify-content-center align-items-center">
+                <div class="card m-2 border-0">
+                    <div class="card-body">
+                        <form class="row login-form g-4" action="">
+                            <div class="col-12">
+                                <h2 class="text-center">Verify OTP</h2>
+                            </div>
+                            <div class="col-12">
+                                <p style="text-align: justify;">We’ve sent a 6-digit One-Time Password (OTP) to your
+                                    registered email. Please enter the code below to verify your identity.</p>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <div class="otp-box d-flex justify-content-between gap-6">
+                                        <input type="text" maxlength="1" class="form-control otp-input" id="digit1" autocomplete="off" required>
+                                        <input type="text" maxlength="1" class="form-control otp-input" id="digit2" autocomplete="off" required
+                                            disabled>
+                                        <input type="text" maxlength="1" class="form-control otp-input" id="digit3" autocomplete="off" required
+                                            disabled>
+                                        <input type="text" maxlength="1" class="form-control otp-input" id="digit4" autocomplete="off" required
+                                            disabled>
+                                        <input type="text" maxlength="1" class="form-control otp-input" id="digit5" autocomplete="off" required
+                                            disabled>
+                                        <input type="text" maxlength="1" class="form-control otp-input" id="digit6" autocomplete="off" required
+                                            disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn continue-btn text-white w-100"
+                                    onclick="submitOTP()">Submit</button>
+                            </div>
+                            <div class="col-12">
+                                <div class="d-flex justify-content-center">
+                                    <a href="login.html">Login</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+</body>
+<!-- jquery min js v3.7.1 -->
+<script src="../../assets/source/js/jquery.min.js"></script>
+
+<!-- bootstrap bundle min js v5.3.3 -->
+<script src="../../assets/source/bootstrap/bootstrap.bundle.min.js"></script>
+
+<!-- owl carousel 2 min js v2.3.4 -->
+<script src="../../assets/source/Owl Carousel/owl.carousel.min.js"></script>
+
+<!-- master js -->
+<script src="../../assets/frontent/js/master.js"></script>
+
+<script>
+    const inputs = document.querySelectorAll('.otp-input');
+
+    inputs.forEach((input, index) => {
+        // Allow only numbers
+        input.addEventListener('keypress', (e) => {
+            if (!/[0-9]/.test(e.key)) {
+                e.preventDefault();
+            }
+        });
+
+        input.addEventListener('input', (e) => {
+            if (e.target.value.length > 0) {
+                if (index < inputs.length - 1) {
+                    inputs[index + 1].disabled = false; // Enable the next input
+                    inputs[index + 1].focus(); // Move focus to the next input
+                }
+            }
+        });
+
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Backspace' && !e.target.value && index > 0) {
+                inputs[index].disabled = true; // Disable the current input
+                inputs[index - 1].focus(); // Move focus to the previous input
+            }
+        });
+    });
+
+    // function submitOTP() {
+    //     const otp = Array.from(inputs).map(input => input.value).join('');
+    //     if (otp.length === 6) {
+    //         alert(`Your OTP is: ${otp}`);
+    //     } else {
+    //         alert('Please enter all 6 digits of the OTP.');
+    //     }
+    // }
+
+    // Disable all inputs except the first one initially
+    document.getElementById('digit1').focus();
+</script>
+
+</html>
