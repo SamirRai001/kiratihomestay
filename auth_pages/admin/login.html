@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- title -->
+    <title>Admin Login | Kirati Homestay</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="../../assets/frontent/image/logo&icon/icon.png">
+
+    <!-- bootstrap min css v5.3.3 -->
+    <link rel="stylesheet" href="../../assets/source/bootstrap/bootstrap.min.css">
+
+    <!-- anukool icon css v1.0 -->
+    <link rel="stylesheet" href="../../assets/source/anukool-v1.0/style.css">
+
+    <!-- animate css v4.1.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- owl carousel 2 min css v2.3.4 -->
+    <link rel="stylesheet" href="../../assets/source/Owl Carousel/owl.carousel.min.css">
+
+    <!-- owl thene default min css v2.3.4 -->
+    <link rel="stylesheet" href="../../assets/source/Owl Carousel/owl.theme.default.min.css">
+
+    <!-- master css -->
+    <link rel="stylesheet" href="../../assets/frontent/css/master.css">
+
+</head>
+
+<body>
+    <div class="whole-web-container">
+
+        <!-- Main content here -->
+        <main class="main-contetntainer">
+
+            <!-- Hero div with animation -->
+            <div class="default-admin-login-page hero d-flex justify-content-center align-items-center">
+                <div class="card m-2 border-0">
+                    <div class="card-body">
+                        <form class="row login-form g-4" action="">
+                            <div class="col-12">
+                                <h2 class="text-center">Admin Login</h2>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control border-0" placeholder="Username"
+                                            autocomplete="off">
+                                        <span class="input-group-text border-0"><i class="bi bi-person-fill"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="password" id="password" class="form-control border-0"
+                                            placeholder="Password" autocomplete="off">
+                                        <span class="input-group-text border-0"><i class="bi bi-lock-fill"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="show-password"
+                                        onclick="togglePassword()">
+                                    <label class="form-check-label" for="show-password">
+                                        Show Password
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="button" class="btn login-btn text-white w-100">Login</button>
+                            </div>
+                            <div class="col-12">
+                                <div class="d-flex justify-content-center">
+                                    <a href="#">Forgot Password?</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+</body>
+<!-- jquery min js v3.7.1 -->
+<script src="../../assets/source/js/jquery.min.js"></script>
+
+<!-- bootstrap bundle min js v5.3.3 -->
+<script src="../../assets/source/bootstrap/bootstrap.bundle.min.js"></script>
+
+<!-- owl carousel 2 min js v2.3.4 -->
+<script src="../../assets/source/Owl Carousel/owl.carousel.min.js"></script>
+
+<!-- master js -->
+<script src="../../assets/frontent/js/master.js"></script>
+
+<script>
+    function togglePassword() {
+        const passwordField = document.getElementById('password');
+        const showPasswordCheckbox = document.getElementById('show-password');
+        if (showPasswordCheckbox.checked) {
+            passwordField.type = 'text';
+        } else {
+            passwordField.type = 'password';
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,147 @@
+@font-face {
+  font-family: 'anukool';
+  src:  url('fonts/anukool.eot?gk0ece');
+  src:  url('fonts/anukool.eot?gk0ece#iefix') format('embedded-opentype'),
+    url('fonts/anukool.ttf?gk0ece') format('truetype'),
+    url('fonts/anukool.woff?gk0ece') format('woff'),
+    url('fonts/anukool.svg?gk0ece#anukool') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'anukool' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.location-outline:before {
+  content: "\e920";
+}
+.location-cir-fill:before {
+  content: "\e921";
+}
+.location-fill:before {
+  content: "\e922";
+}
+.location-sq-fill:before {
+  content: "\e923";
+}
+.email-outline:before {
+  content: "\e918";
+}
+.email-cir-fill:before {
+  content: "\e919";
+}
+.email-fill:before {
+  content: "\e91a";
+}
+.email-sq-fill:before {
+  content: "\e91b";
+}
+.telephone-outline:before {
+  content: "\e91c";
+}
+.telephone-cir-fill:before {
+  content: "\e91d";
+}
+.telephone-fill:before {
+  content: "\e91e";
+}
+.telephone-sq-fill:before {
+  content: "\e91f";
+}
+.whatsapp-outline-color:before {
+  content: "\e910";
+  color: #32d851;
+}
+.whatsapp-outline:before {
+  content: "\e911";
+}
+.whatsapp-cir-fill-color:before {
+  content: "\e912";
+  color: #32d851;
+}
+.whatsapp-cir-fill:before {
+  content: "\e913";
+}
+.whatsapp-fill-color:before {
+  content: "\e914";
+  color: #32d851;
+}
+.whatsapp-fill:before {
+  content: "\e915";
+}
+.whatsapp-sq-fill-color:before {
+  content: "\e916";
+  color: #32d851;
+}
+.whatsapp-sq-fill:before {
+  content: "\e917";
+}
+.twitter-outline-color:before {
+  content: "\e908";
+  color: #00a2f3;
+}
+.twitter-outline:before {
+  content: "\e909";
+}
+.twitter-cir-fill-color:before {
+  content: "\e90a";
+  color: #00a2f3;
+}
+.twitter-cir-fill:before {
+  content: "\e90b";
+}
+.twitter-fill-color:before {
+  content: "\e90c";
+  color: #00a2f3;
+}
+.twitter-fill:before {
+  content: "\e90d";
+}
+.twitter-sq-fill-color:before {
+  content: "\e90e";
+  color: #00a2f3;
+}
+.twitter-sq-fill:before {
+  content: "\e90f";
+}
+.facebook-outline-color:before {
+  content: "\e906";
+  color: #1877f2;
+}
+.facebook-outline:before {
+  content: "\e907";
+}
+.facebook-cir-fill-color:before {
+  content: "\e904";
+  color: #1877f2;
+}
+.facebook-cir-fill:before {
+  content: "\e905";
+}
+.facebook-fill-color:before {
+  content: "\e902";
+  color: #1877f2;
+}
+.facebook-fill:before {
+  content: "\e903";
+}
+.facebook-sq-fill-color:before {
+  content: "\e901";
+  color: #1877f2;
+}
+.facebook-sq-fill:before {
+  content: "\e900";
+}
