@@ -41,39 +41,41 @@
             <div class="admin-verify-otp-page hero d-flex justify-content-center align-items-center">
                 <div class="card m-2 border-0">
                     <div class="card-body">
-                        <form class="row login-form g-4" action="">
+                        <form class="row otp-form g-4" id="otpForm" action="">
                             <div class="col-12">
                                 <h2 class="text-center">Verify OTP</h2>
                             </div>
                             <div class="col-12">
-                                <p style="text-align: justify;">We’ve sent a 6-digit One-Time Password (OTP) to your
-                                    registered email. Please enter the code below to verify your identity.</p>
+                                <p style="text-align: justify;">We have sent a 6-digit OTP to your email
+                                    <b>samirrai@gmail.com</b>. Please enter the code below to verify your identity.</p>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <div class="otp-box d-flex justify-content-between gap-6">
-                                        <input type="text" maxlength="1" class="form-control otp-input" id="digit1" autocomplete="off" required>
-                                        <input type="text" maxlength="1" class="form-control otp-input" id="digit2" autocomplete="off" required
-                                            disabled>
-                                        <input type="text" maxlength="1" class="form-control otp-input" id="digit3" autocomplete="off" required
-                                            disabled>
-                                        <input type="text" maxlength="1" class="form-control otp-input" id="digit4" autocomplete="off" required
-                                            disabled>
-                                        <input type="text" maxlength="1" class="form-control otp-input" id="digit5" autocomplete="off" required
-                                            disabled>
-                                        <input type="text" maxlength="1" class="form-control otp-input" id="digit6" autocomplete="off" required
-                                            disabled>
+                                    <div class="otp-box-holder d-flex justify-content-between gap-6">
+                                        <input type="number" maxlength="1" class="form-control otp-input otp-box-1"
+                                            autocomplete="off" required>
+                                        <input type="number" maxlength="1" class="form-control otp-input otp-box-2"
+                                            autocomplete="off" required disabled>
+                                        <input type="number" maxlength="1" class="form-control otp-input otp-box-3"
+                                            autocomplete="off" required disabled>
+                                        <input type="number" maxlength="1" class="form-control otp-input otp-box-4"
+                                            autocomplete="off" required disabled>
+                                        <input type="number" maxlength="1" class="form-control otp-input otp-box-5"
+                                            autocomplete="off" required disabled>
+                                        <input type="number" maxlength="1" class="form-control otp-input otp-box-6"
+                                            autocomplete="off" required disabled>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button type="submit" class="btn continue-btn text-white w-100"
-                                    onclick="submitOTP()">Submit</button>
+                                <button type="submit" class="btn continue-btn text-white w-100">Submit</button>
                             </div>
                             <div class="col-12">
-                                <div class="d-flex justify-content-center">
-                                    <a href="login.html">Login</a>
-                                </div>
+                                <p class="otp-timer-holder text-center">Resend in <span class="otp-timer">60</span>
+                                    seconds</p>
+
+                                <a href="otpverify.html" class="btn w-100 resend-otp-btn"
+                                    onclick="startResendTimer()">Resend</a>
                             </div>
                         </form>
                     </div>
@@ -97,44 +99,8 @@
 <script src="../../assets/frontent/js/master.js"></script>
 
 <script>
-    const inputs = document.querySelectorAll('.otp-input');
-
-    inputs.forEach((input, index) => {
-        // Allow only numbers
-        input.addEventListener('keypress', (e) => {
-            if (!/[0-9]/.test(e.key)) {
-                e.preventDefault();
-            }
-        });
-
-        input.addEventListener('input', (e) => {
-            if (e.target.value.length > 0) {
-                if (index < inputs.length - 1) {
-                    inputs[index + 1].disabled = false; // Enable the next input
-                    inputs[index + 1].focus(); // Move focus to the next input
-                }
-            }
-        });
-
-        input.addEventListener('keydown', (e) => {
-            if (e.key === 'Backspace' && !e.target.value && index > 0) {
-                inputs[index].disabled = true; // Disable the current input
-                inputs[index - 1].focus(); // Move focus to the previous input
-            }
-        });
-    });
-
-    // function submitOTP() {
-    //     const otp = Array.from(inputs).map(input => input.value).join('');
-    //     if (otp.length === 6) {
-    //         alert(`Your OTP is: ${otp}`);
-    //     } else {
-    //         alert('Please enter all 6 digits of the OTP.');
-    //     }
-    // }
-
-    // Disable all inputs except the first one initially
-    document.getElementById('digit1').focus();
+    initializeOtpInputs();
+    initializeOtpTimer();
 </script>
 
 </html>

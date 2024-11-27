@@ -57,3 +57,55 @@ $(document).ready(function () {
 });
 // ------------------------------ Contact Page End ------------------------------
 
+
+
+// --------------- OTP handaling js ---------------
+function initializeOtpInputs() {
+    const otpInputs = document.querySelectorAll('.otp-input');
+    otpInputs.forEach((input, index) => {
+        input.addEventListener('input', () => {
+            const value = input.value.trim();
+            if (value && index < otpInputs.length - 1) {
+                otpInputs[index + 1].disabled = false;
+                otpInputs[index + 1].focus();
+            }
+            if (value.length > 1) {
+                input.value = value[0];
+            }
+        });
+        input.addEventListener('keydown', (event) => {
+            if (event.key === 'Backspace') {
+                if (!input.value && index > 0) {
+                    otpInputs[index].disabled = true;
+                    otpInputs[index - 1].focus();
+                    otpInputs[index - 1].value = '';
+                }
+            }
+        });
+    });
+    otpInputs[0].disabled = false;
+    otpInputs.forEach((input, index) => {
+        if (index > 0) input.disabled = true;
+    });
+}
+
+function initializeOtpTimer() {
+    const resendOtpBtn = document.querySelector('.resend-otp-btn');
+    const otptimerElement = document.querySelector('.otp-timer');
+    const otpTimerHolderElement = document.querySelector('.otp-timer-holder');
+    const countdownTime = 60;
+    let timeLeft = countdownTime;
+    resendOtpBtn.classList.add('disabled');
+   const interval = setInterval(() => {
+        otptimerElement.textContent = timeLeft;
+        if (timeLeft === 0) {
+            clearInterval(interval);
+            resendOtpBtn.classList.remove('disabled');
+            otpTimerHolderElement.style.display = 'none';
+        }
+        timeLeft--;
+    }, 1000);
+}
+
+
+

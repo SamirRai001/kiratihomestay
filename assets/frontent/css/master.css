@@ -49,6 +49,25 @@ a {
 
 /* -------------------------- Scroll bar css end -------------------------- */
 
+.invalid-tooltip {
+  position: relative;
+  transform: translate(10px, 2px);
+}
+
+.invalid-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 10px;
+  margin-top: -9PX;
+  width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 10px solid #dc3545;
+}
+
 /* -------------------------- Button css start -------------------------- */
 .btn.border-0:focus {
   box-shadow: none;
@@ -614,30 +633,34 @@ a {
 /* ---------------------------------------------------- Contact page css end ---------------------------------------------------- */
 
 
-/* ---------------------------------------------------- Admin Login page css start ---------------------------------------------------- */
+/* ---------------------------------------------------- Admin Auth pages css start ---------------------------------------------------- */
 .admin-login-page.hero,
 .admin-forgot-password-page.hero,
-.admin-verify-otp-page.hero {
+.admin-verify-otp-page.hero,
+.admin-new-password-page.hero {
   min-height: 100vh;
   position: relative;
 }
 
 .admin-login-page.hero .card,
 .admin-forgot-password-page.hero .card,
-.admin-verify-otp-page.hero .card {
+.admin-verify-otp-page.hero .card,
+.admin-new-password-page.hero .card {
   overflow: hidden;
   position: relative;
 }
 
 .admin-login-page.hero .card .card-body,
 .admin-forgot-password-page.hero .card .card-body,
-.admin-verify-otp-page.hero .card .card-body {
+.admin-verify-otp-page.hero .card .card-body,
+.admin-new-password-page.hero .card .card-body {
   max-width: 400px;
 }
 
 .admin-login-page.hero h2,
 .admin-forgot-password-page.hero h2,
-.admin-verify-otp-page.hero h2 {
+.admin-verify-otp-page.hero h2,
+.admin-new-password-page.hero h2 {
   color: var(--primary-color);
   font-weight: 900;
 }
@@ -650,24 +673,47 @@ a {
   font-weight: 600;
 }
 
+.admin-verify-otp-page.hero .otp-box-holder input::-webkit-outer-spin-button,
+.admin-verify-otp-page.hero .otp-box-holder input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.resend-btn:not([disabled]) {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.admin-verify-otp-page.hero .otp-input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.admin-verify-otp-page.hero .resend-otp-btn {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
 .admin-verify-otp-page.hero .otp-input:focus {
   border: 1px solid var(--primary-color);
 }
 
 .admin-login-page.hero .input-group .form-control,
-.admin-forgot-password-page.hero .input-group .form-control {
+.admin-forgot-password-page.hero .input-group .form-control,
+.admin-new-password-page.hero .input-group .form-control {
   font-weight: 600;
   padding-left: 20px;
   height: 50px;
 }
 
 .admin-login-page.hero .input-group .form-control::placeholder,
-.admin-forgot-password-page.hero .input-group .form-control::placeholder {
+.admin-forgot-password-page.hero .input-group .form-control::placeholder,
+.admin-new-password-page.hero .input-group .form-control::placeholder {
   opacity: 0.5;
 }
 
 .admin-login-page.hero .input-group .input-group-text,
-.admin-forgot-password-page.hero .input-group .input-group-text {
+.admin-forgot-password-page.hero .input-group .input-group-text,
+.admin-new-password-page.hero .input-group .input-group-text {
   padding-right: 20px;
   font-size: 24px;
   color: var(--primary-color);
@@ -676,33 +722,41 @@ a {
 .admin-login-page.hero .input-group .form-control,
 .admin-login-page.hero .input-group .input-group-text,
 .admin-forgot-password-page.hero .input-group .form-control,
-.admin-forgot-password-page.hero .input-group .input-group-text {
+.admin-forgot-password-page.hero .input-group .input-group-text,
+.admin-new-password-page.hero .input-group .form-control,
+.admin-new-password-page.hero .input-group .input-group-text {
   background-color: #eeeeee;
 }
 
 .admin-login-page.hero .input-group .form-control:focus,
 .admin-login-page.hero .form-check .form-check-input:focus,
 .admin-forgot-password-page.hero .input-group .form-control:focus,
-.admin-verify-otp-page.hero .otp-input {
+.admin-verify-otp-page.hero .otp-input:focus,
+.admin-new-password-page.hero .input-group .form-control:focus,
+.admin-new-password-page.hero .form-check .form-check-input:focus {
   box-shadow: none;
 }
 
-.admin-login-page.hero .form-check .form-check-input {
+.admin-login-page.hero .form-check .form-check-input,
+.admin-new-password-page.hero .form-check .form-check-input {
   border: 1px solid var(--primary-color);
 }
 
-.admin-login-page.hero .form-check .form-check-input:checked {
+.admin-login-page.hero .form-check .form-check-input:checked,
+.admin-new-password-page.hero .form-check .form-check-input:checked {
   background-color: var(--primary-color);
 }
 
-.admin-login-page.hero .form-check .form-check-label {
+.admin-login-page.hero .form-check .form-check-label,
+.admin-new-password-page.hero .form-check .form-check-label {
   cursor: pointer;
   color: var(--primary-color);
 }
 
 .admin-login-page.hero .login-btn,
 .admin-forgot-password-page.hero .continue-btn, 
-.admin-verify-otp-page.hero .continue-btn {
+.admin-verify-otp-page.hero .continue-btn,
+.admin-new-password-page.hero .continue-btn {
   font-weight: 600;
   font-size: 16px;
   height: 50px;
@@ -713,8 +767,10 @@ a {
 .admin-forgot-password-page.hero p,
 .admin-forgot-password-page.hero a,
 .admin-verify-otp-page.hero p,
-.admin-verify-otp-page.hero a {
+.admin-verify-otp-page.hero a,
+.admin-new-password-page.hero p,
+.admin-new-password-page.hero a {
   color: var(--primary-color);
 }
 
-/* ---------------------------------------------------- Admin Login page css end ---------------------------------------------------- */
+/* ---------------------------------------------------- Admin Auth pages css end ---------------------------------------------------- */
